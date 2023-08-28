@@ -1,0 +1,19 @@
+<p>
+  <mat-toolbar color="accent">
+    <mat-toolbar-row>
+        <button routerLink=".." class="border-2 hover:bg-sky-700 hover:text-orange-600 p-2 text-slate-700 rounded-full">back to all posts</button>
+        <span class="title">POST {{post.id}}</span>
+        <span class="example-spacer"></span>
+        <button class="mr-10" (click)="logOut()">LOGIN</button>
+        <button (click)="logOut()">EXIT</button>
+    </mat-toolbar-row>
+  </mat-toolbar>
+</p>
+
+
+<mat-card class="p-4">
+    <mat-card-title class="text-yellow-500">{{post.title}}</mat-card-title>
+    <mat-card-subtitle>{{post.body}}</mat-card-subtitle>
+</mat-card>
+  
+  

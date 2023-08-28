@@ -1,0 +1,38 @@
+<div class="wrapper">
+	<div class="main">  	
+		<input type="checkbox" id="chk" aria-hidden="true">
+			<div class="signup">
+				<form [formGroup]="registerForm" (ngSubmit)="onSignUp">
+					<label for="chk" aria-hidden="true">Sign up</label>
+					<input autocomplete="off" formControlName="username" type="text" name="username" placeholder="User name" 
+						[class.invalid]="registerForm.get('username')?.invalid &&
+						(registerForm.get('username')?.dirty ||
+					  	registerForm.get('username')?.touched)">
+					<input autocomplete="off" formControlName="email" type="email" name="email" placeholder="Email" [class.invalid]="
+					registerForm.get('email')?.invalid &&
+					(registerForm.get('email')?.dirty ||
+					  registerForm.get('email')?.touched)">
+					<input autocomplete="off" formControlName="password" type="password" name="pswd" placeholder="Password" [class.invalid]="
+					registerForm.get('password')?.invalid &&
+					(registerForm.get('password')?.dirty ||
+					  registerForm.get('password')?.touched)">
+					<button (click)="onSignUp()">Sign up</button>
+				</form>
+			</div>
+
+			<div class="login">
+				<form [formGroup]="loginForm" (ngSubmit)="onLogin">
+					<label for="chk" aria-hidden="true" class="p-4">Login</label>
+					<input autocomplete="off" formControlName="username" type="text" name="username" placeholder="User name" [class.invalid]="
+					loginForm.get('email')?.invalid &&
+					(loginForm.get('email')?.dirty ||
+					  loginForm.get('email')?.touched)">
+					<input autocomplete="off" formControlName="password" type="password" name="pswd" placeholder="Password" [class.invalid]="
+					loginForm.get('password')?.invalid &&
+					(loginForm.get('password')?.dirty ||
+					  loginForm.get('password')?.touched)">
+					<button (click)="onLogin()">Login</button>
+				</form>
+			</div>
+	</div>
+</div>
